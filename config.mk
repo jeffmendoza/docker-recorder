@@ -3,7 +3,7 @@ CFLAGS += -g
 INSTALLDIR = /usr
 
 # Do you want support for MQTT?
-WITH_MQTT ?= yes
+WITH_MQTT ?= no
 
 # Do you want recorder's built-in HTTP REST API?
 WITH_HTTP ?= yes
@@ -12,7 +12,7 @@ WITH_HTTP ?= yes
 WITH_LMDB ?= yes
 
 # Do you have Lua libraries installed and want the Lua hook integration?
-WITH_LUA ?= yes
+WITH_LUA ?= no
 
 # Do you want support for the `pingping' monitoring feature?
 WITH_PING ?= yes
@@ -64,17 +64,17 @@ JSON_INDENT ?= no
 CONFIGFILE = /config/recorder.conf
 
 # Optionally specify the path to the Mosquitto libs, include here
-MOSQUITTO_INC = -I/usr/include
-MOSQUITTO_LIB = -L/usr/lib
-MORELIBS = # -lssl
+#MOSQUITTO_INC = -I/usr/include
+#MOSQUITTO_LIB = -L/usr/lib
+#MORELIBS = # -lssl
 
 # If WITH_LUA is configured, specify compilation and linkage flags
 # for Lua either manually or using pkg-config. This may require tweaking,
 # and in particular could require you to add the lua+version (e.g lua-5.2)
 # to both pkg-config invocations
 
-LUA_CFLAGS = `pkg-config --cflags lua5.2`
-LUA_LIBS   = `pkg-config --libs lua5.2`
+#LUA_CFLAGS = `pkg-config --cflags lua5.2`
+#LUA_LIBS   = `pkg-config --libs lua5.2`
 
 SODIUM_CFLAGS = `pkg-config --cflags libsodium`
 SODIUM_LIBS = `pkg-config --libs libsodium`
